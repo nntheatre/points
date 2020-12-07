@@ -104,7 +104,7 @@ class AppMain extends React.Component<IProps, IState> {
       <br />
       <Row>
         <Col lg="12" className="">
-        <p>At Niles North, to be inducted you must earn 10 points, 2 of which must come from crew and other backstage work. One point is roughly equivalent to 10 points of work.</p>
+        <p>At Niles North, to be inducted you must earn 10 points, 2 of which must come from crew and other backstage work. One point is roughly equivalent to 10 hours of work.</p>
         <p>To maintain thespian membership after being inducted, you must also earn additional 2 points per year in any area.</p>
         </Col>
       </Row>
