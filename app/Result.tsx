@@ -4,11 +4,11 @@ import styled from 'styled-components'
 
 interface IProps {
   visible?: boolean,
-  crew_hours: number,
-  total_hours: number
+  crew_points: number,
+  total_points: number
 }
 
-const CrewHours = styled.div`
+const Crewpoints = styled.div`
   font-size: 3rem;
   margin-right: auto;
   color: #000;
@@ -17,7 +17,7 @@ const CrewHours = styled.div`
   }
 `
 
-const TotalHours = styled.div`
+const Totalpoints = styled.div`
   font-size: 3rem;
   margin-left: auto;
   color: #000;
@@ -31,10 +31,10 @@ const Result = (props: IProps) => {
   return props.visible ? (
   <Row>
     <Col lg='6' className="text-left">
-      <CrewHours>Crew Hours: {props.crew_hours}</CrewHours>
+      <Crewpoints>Crew points: {props.crew_points}</Crewpoints>
     </Col>
     <Col lg='6' className="text-right">
-      <TotalHours>Total Hours: {props.total_hours}</TotalHours>
+      <Totalpoints>Total points: {props.total_points}</Totalpoints>
     </Col>
   </Row>
   ) : null;

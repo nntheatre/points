@@ -17,8 +17,8 @@ interface IProps {
 interface IState {
   searching?: boolean;
   loaded?: boolean;
-  crew_hours?: number;
-  total_hours?: number,
+  crew_points?: number;
+  total_points?: number,
   error?: boolean;
   showErrorModal?: boolean;
 }
@@ -29,11 +29,11 @@ class AppMain extends React.Component<IProps, IState> {
   constructor(props) {
     super(props);
 
-    this.state = { searching: false, loaded: false, crew_hours: 0, total_hours: 0};
+    this.state = { searching: false, loaded: false, crew_points: 0, total_points: 0};
     this.loadData = this.loadData.bind(this);
   }
 
-  findHours = (range, id): {'crew': number, 'total': number} | null => {
+  findpoints = (range, id): {'crew': number, 'total': number} | null => {
     //console.log(range)
     for (var i = 0; i < range.length; i++) {
       var donations = range[i]
@@ -59,10 +59,10 @@ class AppMain extends React.Component<IProps, IState> {
         console.log(response.result.valueRanges[0].values)
         var ranges = response.result.valueRanges;
         for(var i = 0; i < ranges.length; i++) {
-          var hours = this.findHours(ranges[i].values, email);
-          if(hours) {
+          var points = this.findpoints(ranges[i].values, email);
+          if(points) {
             found = true;
-            this.setState({crew_hours: hours['crew'], total_hours: hours['total']})
+            this.setState({crew_points: points['crew'], total_points: points['total']})
           }
         }
         if(!found) {
@@ -100,11 +100,11 @@ class AppMain extends React.Component<IProps, IState> {
           </InputGroup.Append>
         </InputGroup>
       </Form>
-      <Result visible={this.state.loaded} crew_hours={this.state.crew_hours} total_hours={this.state.total_hours} />
+      <Result visible={this.state.loaded} crew_points={this.state.crew_points} total_points={this.state.total_points} />
       <br />
       <Row>
         <Col lg="12" className="">
-        <p>At Niles North, to be inducted you must earn 10 points, 2 of which must come from crew and other backstage work. One point is roughly equivalent to 10 hours of work.</p>
+        <p>At Niles North, to be inducted you must earn 10 points, 2 of which must come from crew and other backstage work. One point is roughly equivalent to 10 points of work.</p>
         <p>To maintain thespian membership after being inducted, you must also earn additional 2 points per year in any area.</p>
         </Col>
       </Row>
