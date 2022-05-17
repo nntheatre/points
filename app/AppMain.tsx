@@ -118,7 +118,7 @@ class AppMain extends React.Component<IProps, IState> {
           <p>
             Cannot find user in the Theatre database with the given email. Please note the database may not be updated for two weeks after show closing.
 
-            <br /> <br />Please contact <a href="mailto:amabla1@nilesk12.org">Amanda Blatt</a> for any questions.
+            <br /> <br />Please contact <a href="mailto:ethcol2@nilesk12.org">Ethan Colish</a> for any questions.
           </p>
         </Modal.Body>
         <Modal.Footer>
